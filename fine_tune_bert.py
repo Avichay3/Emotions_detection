@@ -35,7 +35,6 @@ import torch
 import os
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-print("💻 Using device:", device)
 
 os.environ["WANDB_DISABLED"] = "true"
 
@@ -99,7 +98,7 @@ trainer = Trainer(
 trainer.train()
 
 eval_result = trainer.evaluate()
-print("📊 Fine-tuned BERT Accuracy:", round(eval_result["eval_accuracy"] * 100, 2), "%")
+print(" fine tuned BERT Accuracy:", round(eval_result["eval_accuracy"] * 100, 2), "%")
 
 preds = trainer.predict(test_dataset)
 y_pred = preds.predictions.argmax(axis=1)
