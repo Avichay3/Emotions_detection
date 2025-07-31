@@ -103,6 +103,7 @@ print(" fine tuned BERT Accuracy:", round(eval_result["eval_accuracy"] * 100, 2)
 preds = trainer.predict(test_dataset)
 y_pred = preds.predictions.argmax(axis=1)
 y_true = preds.label_ids
+#
 
 from sklearn.metrics import accuracy_score
 print("Calculated Accuracy:", accuracy_score(y_true, y_pred))
